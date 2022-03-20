@@ -17,12 +17,20 @@ th, td {
   border-radius: 0px;
 }
 
-div {
-background-color: lightgrey;
-width: 300px;
-border: 15px solid green;
-padding: 50px;
-margin: 20px;
+.block {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-color: lightgray;
+}
+
+.container {
+  text-align: center;
+}
+
+.block img {
+ width: 100px;
+ height: 100px;
 }
   
 </style>
@@ -35,21 +43,18 @@ margin: 20px;
 <p style="font-family:verdana; font-size:100%; text-align:center;"> 
 
 <hr>
-    
-    <table class="center" style="font-family:verdana; font-size:100%; text-align:center;">
-        <thead>
-            <div><p>Library
-            <p>Level
-            <p>Available Space</th>
-        </thead>
-        {% for lib in records %}
-        <tr>
-            <td> {{ lib.0 }} </td>
-            <td> {{ lib.1 }} </td>
-            <td> {{ lib.2 }} / {{ lib.3 }}</td>
-        </tr>
-        {% endfor %}
-    </table>  
+
+{% for lib in records %}
+<div class="container">
+  <div class="block">
+    <h3> {{lib.0}} </h3>
+    <img src="https://cdn-icons-png.flaticon.com/512/225/225932.png">
+    <p> {{ lib.1 }} </p>
+    <p> {{ lib.2 }} / {{ lib.3 }}</p>
+    {% endfor %}
+</div>
+  
+ 
   
 <a href="https://gotspaceanottest1.herokuapp.com/login/">Login</a> </p>
 <a href="https://gotspaceanottest1.herokuapp.com/add/">Register</a> </p>
