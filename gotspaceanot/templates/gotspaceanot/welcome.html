@@ -8,21 +8,6 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
-table.center {
-  margin-left: auto; 
-  margin-right: auto;
-}
-th, td {
-  border: 3px solid black;
-  border-radius: 0px;
-}
-
-.block {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  background-color: lightgray;
-}
 
 .container {
   text-align: center;
@@ -37,12 +22,12 @@ th, td {
   display: grid;
   grid-template-columns: auto auto auto;
   background-color: black;
-  padding: 4px;
+  padding: 5px;
 }
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
   border: 2px solid rgba(0, 0, 0, 0.8);
-  padding: 4px;
+  padding: 20px;
   font-size: 20px;
   text-align: center;
   }
@@ -59,7 +44,7 @@ th, td {
 
 <div class="grid-container">
 {% for lib in records %}
-  <div class="grid-item"> {{lib.0 }} <br> <img src="https://cdn-icons-png.flaticon.com/512/225/225932.png" width="25%" height="25%"> <br> Level {{lib.1}} <br> {{ lib.2 }} / {{ lib.3 }} </div>
+  <div class="grid-item"> {{lib.0 }} <br> <img src="https://cdn-icons-png.flaticon.com/512/225/225932.png" width="25%" height="50%"> <br> Level {{lib.1}} <br> {{ lib.2 }} / {{ lib.3 }} </div>
 {% endfor %}
 </div>
   
