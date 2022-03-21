@@ -31,24 +31,43 @@
   text-align: center;
   }
   
+@import url(https://fonts.googleapis.com/css?family=Khula:700);
+body {
+  background: #111;
+}
+.hidden {
+  opacity:0;
+}
+.console-container {
+ 
+  font-family:Khula;
+  font-size:4em;
+  text-align:center;
+  height:200px;
+  width:600px;
+  display:block;
+  position:absolute;
+  color:white;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+}
+.console-underscore {
+   display:inline-block;
+  position:relative;
+  top:-0.14em;
+  left:10px;
+}
+  
 </style>
 </head>
 <body>
 
 <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/NUS_coat_of_arms.svg/1200px-NUS_coat_of_arms.svg.png" alt="NUS" class="center" width="5%" height="7%"> 
 
-<div class="word">
-  <span>GOT</span>
-  <span>SPACE</span>
-  <span>A</span>
-  <span>NOT</span>
-  <span>?</span>
-</div>
-<footer>
-  <p>Created with <i class="fa fa-heart"></i> by <a target="_blank" href="https://florin-pop.com">Florin Pop</a></p>
-</footer>
-  
-
+<div class='console-container'><span id='text'></span><div class='console-underscore' id='got space a not?'>&#95;</div></div>
 
 <p style="font-family:verdana; font-size:60%; text-align:center;"> 
 
