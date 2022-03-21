@@ -33,16 +33,23 @@ th, td {
  height: 100px;
 }
   
-.row {
-  display: flex;
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
 }
-
-.column {
-  flex: 20%;
-  padding: 5px;
-}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  }
   
 </style>
+</head>
+<body>
 
 <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/NUS_coat_of_arms.svg/1200px-NUS_coat_of_arms.svg.png" alt="NUS" style="float:left" width="4%" height="4%"> 
 <h1 style="font-family:verdana; font-size:200%; text-align:left;">Got Space A Not?</h1>
@@ -53,18 +60,12 @@ th, td {
 
 <hr>
 
-{% for lib in records %}
-<div class="container">
-  <div class="block">
-    <div class="row">
-      <div class="column">
-        <h3> {{lib.0}} </h3>
-           <img src="https://cdn-icons-png.flaticon.com/512/225/225932.png">
-              <p> Level {{ lib.1 }} <br>
-              {{ lib.2 }} / {{ lib.3 }} </p>
-        </div>
-  <div class="column">
-  {% endfor %}
+  <div class="grid-container">
+  <div class="grid-item"> {{lib.0.0 }} <br> <img src="https://cdn-icons-png.flaticon.com/512/225/225932.png"> <br> {{ lib.2.0 }} / {{ lib.3.0 }} </div>
+  <div class="grid-item"> {{lib.0.1 }} <br> <img src="https://cdn-icons-png.flaticon.com/512/225/225932.png"> <br> {{ lib.2.1 }} / {{ lib.3.1 }}</div>
+  <div class="grid-item"> {{lib.0.2 }} <br> <img src="https://cdn-icons-png.flaticon.com/512/225/225932.png"> <br> {{ lib.2.2 }} / {{ lib.3.2 }} </div>  
+  <div class="grid-item"> {{lib.0.3 }} <br> <img src="https://cdn-icons-png.flaticon.com/512/225/225932.png"> <br> {{ lib.2.3 }} / {{ lib.3.3 }}</div>
+  <div class="grid-item"> {{lib.0.4 }} <br> <img src="https://cdn-icons-png.flaticon.com/512/225/225932.png"> <br> {{ lib.2.4 }} / {{ lib.3.4 }}</div>
 </div>
   
  
