@@ -31,44 +31,40 @@
   text-align: center;
   }
   
-@import url(https://fonts.googleapis.com/css?family=Khula:700);
-body {
-  background: #111;
+.typewriter h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
 }
-.hidden {
-  opacity:0;
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
-.console-container {
- 
-  font-family:Khula;
-  font-size:4em;
-  text-align:center;
-  height:200px;
-  width:600px;
-  display:block;
-  position:absolute;
-  color:white;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  margin:auto;
-}
-.console-underscore {
-   display:inline-block;
-  position:relative;
-  top:-0.14em;
-  left:10px;
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
 }
   
 </style>
 </head>
 <body>
 
-<img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/NUS_coat_of_arms.svg/1200px-NUS_coat_of_arms.svg.png" alt="NUS" class="center" width="5%" height="7%"> 
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/NUS_coat_of_arms.svg/1200px-NUS_coat_of_arms.svg.png" alt="NUS" class="center" width="1%" height="2%"> 
 
-<div class='console-container'><span id='text'></span><div class='console-underscore' id='got space a not?'>&#95;</div></div>
-
+<div class="typewriter">
+  <h1>Got Space A Not?</h1>
+</div>
+  
+<br>
 <p style="font-family:verdana; font-size:60%; text-align:center;"> 
 
 <div class="grid-container">
