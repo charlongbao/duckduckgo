@@ -55,14 +55,12 @@ th, td {
 <h1 style="font-family:verdana; font-size:200%; text-align:left;">Got Space A Not?</h1>
 
 
-
 <p style="font-family:verdana; font-size:100%; text-align:center;"> 
 
-<hr>
+<div class="grid-container">
 {% for lib in records %}
-  <div class="grid-container">
-  <div class="grid-item"> {{lib.0 }} <br> <img src="https://cdn-icons-png.flaticon.com/512/225/225932.png"> <br> {{ lib.2 }} / {{ lib.3 }} </div>
-  {% endfor %}
+  <div class="grid-item"> {{lib.0 }} <br> <img src="https://cdn-icons-png.flaticon.com/512/225/225932.png"> <br> Level {{lib.1}} <br> {{ lib.2 }} / {{ lib.3 }} </div>
+{% endfor %}
 </div>
   
  
