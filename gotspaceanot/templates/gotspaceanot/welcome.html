@@ -66,19 +66,13 @@
 </head>
   
 <br>
-  
-<body>
-<p style="font-family:verdana; font-size:40%; text-align:center;"> 
-
-<p>
+ 
 <div class="grid-container">
 {% for lib in records %}
-  <div class="grid-item"> {{lib.0 }} <br> <img src="https://cdn-icons-png.flaticon.com/512/225/225932.png" width="30%" height="40%"> <br> Level {{lib.1}} <br> {{ lib.2 }} / {{ lib.3 }} </div>
+  <div class="grid-item" font-size = 80% > {{lib.0 }} <br> <img src="https://cdn-icons-png.flaticon.com/512/225/225932.png" width="30%" height="40%"> <br> Level {{lib.1}} <br> {{ lib.2 }} / {{ lib.3 }} </div>
 {% endfor %}
-</div>
-  </p>
+  </div> 
 
- 
 <a href="https://gotspaceanottest1.herokuapp.com/login/">Login</a> </p>
 <a href="https://gotspaceanottest1.herokuapp.com/add/">Register</a> </p>
 <a href="https://gotspaceanottest1.herokuapp.com/library_system/">Library System</a> </p>
