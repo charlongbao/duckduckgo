@@ -4,31 +4,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-  
-.container {
+/* The grid: Three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 50px;
   text-align: center;
+  font-size: 25px;
+  cursor: pointer;
+  color: white;
 }
-  
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-template-rows: auto auto auto auto;
-  grid-gap: 15px;
-  padding: 5px;
+
+.containerTab {
+  padding: 20px;
+  color: white;
 }
-.grid-item {
-  background-color: rgb(232,232,232);
-  border: 2px solid white;
-  padding: 10px;
-  font-size: 20px;
-  text-align: center;
-  }
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Closable button inside the image */
+.closebtn {
+  float: right;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
   
 .typewriter h1 {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -64,16 +69,52 @@
   
 <br>
   
-<div class="grid-container">
-{% for lib in records %}
-  <div class="grid-item" style = "font-family: 'Arial' ; font-size: 80%;" > 
-    {{lib.0 }} <br> <img src="https://cdn-icons-png.flaticon.com/512/225/225932.png" width="30%" height="40%"> <br> Level {{lib.1}} <br> {{ lib.2 }} / {{ lib.3 }} </div>
-{% endfor %}
-  </div> 
+<div class="row">
+  <div class="column" onclick="openTab('CLB');" style="background:green;">CLB</div>
+  <div class="column" onclick="openTab('SLB');" style="background:blue;">    SLB  </div>
+</div>                                                                      
+
+<!-- Full-width columns: (hidden by default) -->
+<div id="CLB" class="containerTab" style="display:none;background:green">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Total Available</h2>
+  <p>records_total[2][1] / records_total[2][2]</p>
+  <h2>Level 3</h2>
+  <p>records[4][2] / records[4][3]</p>                                                                              
+  <h2>Level 4</h2>
+  <p>records[5][2] / records[5][3]</p>                 
+  <h2>Level 5</h2>
+  <p>records[6][2] / records[6][3]</p>      
+                                                                              
+</div>
+
+<div id="SLB" class="containerTab" style="display:none;background:blue">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Total Available</h2>
+  <p>records_total[6][1] / records_total[6][2]</p>
+  <h2>Level 4</h2>
+  <p>records[12][2] / records[4][3]</p>                                                                              
+  <h2>Level 5</h2>
+  <p>records[13][2] / records[5][3]</p>                 
+  <h2>Level 6</h2>
+  <p>records[14][2] / records[6][3]</p>                                                                          
+</div>                                                                        
+                                                                        
 
 <a href="https://gotspaceanottest1.herokuapp.com/login/">Login</a> </p>
 <a href="https://gotspaceanottest1.herokuapp.com/add/">Register</a> </p>
 <a href="https://gotspaceanottest1.herokuapp.com/library_system/">Library System</a> </p>
 <a href="https://gotspaceanottest1.herokuapp.com/library_system_records/">Library System Records</a> </p>
+                                                                         
+<script>
+function openTab(tabName) {
+  var i, x;
+  x = document.getElementsByClassName("containerTab");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+}
+</script>
 </body>
 </html>
